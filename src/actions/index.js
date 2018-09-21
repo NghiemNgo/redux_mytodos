@@ -11,8 +11,9 @@ export const setVisibilityFilter = filter => ({
   filter
 })
 
-export const toggleTodo = id => ({
-  type: 'TOGGLE_TODO',
+export const setProcessing = (action, id) => ({
+  type: 'SET_PROCESSING',
+  action,
   id
 })
 

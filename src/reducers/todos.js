@@ -1,6 +1,6 @@
 import config from '../config';
 const todos = (state = [], action) => {
-	console.log('state', state);
+	console.log('action', action);
 	switch (action.type) {
 		case 'ADD_TODO':
       return [
@@ -12,8 +12,10 @@ const todos = (state = [], action) => {
           processing: config.MARK_AS_NEW
         }
       ]
-      default:
-      	return state
+    case 'SET_PROCESSING':
+      return state.filter(t => t.processing === action.id).processing == action.action;
+    default:
+      return state
 	}
 }
 

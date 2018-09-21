@@ -24,7 +24,6 @@ const mapStateToProps = state => ({
 	todos: getTodoListHasFintered(state.todos, state.todoFilter)
 })
 
-
 export default connect(
 	mapStateToProps
 )(Todo)
