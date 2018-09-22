@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Link as LinkTo } from "react-router-dom";
 
-const Link = ({children, active, onClick, link}) => (
+const Link = ({children, active, onClick, link, count}) => (
 	<Router>
 		<LinkTo to={'/' + link}>
 			<button
 				disabled = {active}
 				onClick = {onClick}
 			>
-				{children}
+				{children} {'(' + count + ')'}
 			</button>
 		</LinkTo>
 	</Router>
