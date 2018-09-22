@@ -10,7 +10,10 @@ const Todo = ({ todos, dispatch}) => (
 	    	<div> { todo.task } </div>
       	<div> { todo.time } </div>
       	<div> {getMark(todo.processing)} </div>
-        {/* <button onClick={dispatch(setProcessing(config.MARK_AS_DOING, todo.id))}>MARK_AS_NEW</button> */}
+        <button onClick={() => dispatch(setProcessing(config.MARK_AS_NEW, todo.id))}>MARK_AS_NEW</button>
+        <button onClick={() => dispatch(setProcessing(config.MARK_AS_DOING, todo.id))}>MARK_AS_DOING</button>
+        <button onClick={() => dispatch(setProcessing(config.MARK_AS_DONE, todo.id))}>MARK_AS_DONE</button>
+        <button onClick={() => dispatch(setProcessing(config.MARK_AS_DELETE, todo.id))}>MARK_AS_DELETE</button>
       </div>
     )}
   </div>

@@ -8,7 +8,7 @@ const getTodoListHasFintered = (todos, filter) => {
 	console.log(filter);
 	switch (filter) {
 		case TodoFilters.SHOW_ALL:
-			return todos;
+			return todos.filter(t => t.processing !== config.MARK_AS_DELETE);
 		case TodoFilters.SHOW_NEW:
 			return todos.filter(t => t.processing === config.MARK_AS_NEW);
 		case TodoFilters.SHOW_DOING:

@@ -13,7 +13,9 @@ const todos = (state = [], action) => {
         }
       ]
     case 'SET_PROCESSING':
-      return state.filter(t => t.processing === action.id).processing == action.action;
+      return state.map(task => (task.id === action.id) 
+      ? {...task, processing: action.action}
+      : task);
     default:
       return state
 	}
